@@ -31,6 +31,38 @@ All Domain controllers
 * Replicate updates to other domain controllers in the domain and forest
 * Allow administrative access to manage user accounts and network resources
 
+## Logical AD Components
+
+#### AD DS Schema
+
+* Defines every type of object that can be stored in the directory
+* Enforces rules regarding object creation
+
+Domains
+
+* Domains are used to group and manage objects in an organization
+  * An administrative boundary for applying policies to groups of objects
+  * A replication boundary for replicating data between domain controllers
+  * An authentication and authorization boundary that provides a way to limit the scope of access to resources
+
+#### Trees
+
+* A domain tree is a hierarchy of domains in AD DS
+  * All domains in the tree
+    * Share a contiguous namespace with the parent domain
+    * Can have additional child domain
+    * By default create a 2 way transitive trust with other domains
+
+#### Forest
+
+* A collection of one or more domain tree
+  * All forests
+    * Share a common schema
+    * Share a common configuration partition
+    * Share a common global catalog to enable searching
+    * Enable trusts between all domains in the forest
+    * Share the enterprise Admins and Schema Admins groups
+
 
 
 ## Active Directory - Objects
