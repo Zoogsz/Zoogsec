@@ -1,4 +1,4 @@
-# Active Directory Overview
+# Active Directory - Intro
 
 Active Directory is a service developed by Microsoft to manage Windows domain networks. It stored information related to objects like computers, users, printers etc.
 

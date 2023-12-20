@@ -20,9 +20,10 @@
 ## Not-So-Niche
 
 * [Simple Network Management Protocol](not-so-niche/simple-network-management-protocol.md)
-* [Attacking VOIP - Intro](not-so-niche/attacking-voip-intro.md)
+* [Attacking VOIP](not-so-niche/attacking-voip.md)
 
 ## Attacking Active Directory
 
-* [Active Directory - Intro](attacking-active-directory/active-directory-intro.md)
-* [Kerberos - Intro](attacking-active-directory/kerberos-intro.md)
+* [Active Directory - Technologies](attacking-active-directory/active-directory-technologies/README.md)
+  * [Active Directory - Intro](attacking-active-directory/active-directory-technologies/active-directory-intro.md)
+  * [Kerberos - Intro](attacking-active-directory/active-directory-technologies/kerberos-intro.md)
