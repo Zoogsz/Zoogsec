@@ -1,6 +1,6 @@
 # Kerberos - Intro
 
-Lets start with what is kerberos? Authentication protocol, it allows AD to identify each user who provides a secret password. It does NOT validate to which resources or services that user can access.
+Lets start with what is kerberos? Simply put it is an authentication protocol, it allows AD to identify each user who provides a secret password. It does NOT validate to which resources or services that user can access.
 
 ## Kerberos Items
 
@@ -52,9 +52,10 @@ A client can avoid the inclusion of the PAC inside of the ticket by specifying i
 * KRB-AP-REQ - Authenticates a user against a service using the TGS
 * KRB-AP-REP - Used by a service to identify itself against the user
 * KRB-ERROR - Message used to communicate error conditions
-*
 
-#### Authentication Process
+
+
+## Authentication Process's
 
 **KRB\_AS\_REQ**
 
