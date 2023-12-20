@@ -17,10 +17,12 @@
 * [OSINT](recon/osint.md)
 * [Scanning and Enumeration](recon/scanning-and-enumeration.md)
 
-## VOIP
+## Not-So-Niche
 
-* [Attacking VOIP - Intro](voip/attacking-voip-intro.md)
+* [Simple Network Management Protocol](not-so-niche/simple-network-management-protocol.md)
+* [Attacking VOIP - Intro](not-so-niche/attacking-voip-intro.md)
 
-## Attacking Azure Active Directory
+## Attacking Active Directory
 
-* [Active Directory Overview](attacking-azure-active-directory/active-directory-overview.md)
+* [Active Directory - Intro](attacking-active-directory/active-directory-intro.md)
+* [Kerberos - Intro](attacking-active-directory/kerberos-intro.md)
