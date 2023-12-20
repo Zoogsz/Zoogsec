@@ -4,7 +4,7 @@ Active Directory is a service developed by Microsoft to manage Windows domain ne
 
 
 
-The big difference between exploiting AD vs other devices is we aren't exploiting patchable vulnerabilities. AD attacks focuses on abusing features, trusts, components etc.
+The big difference between exploiting AD vs other devices is we aren't exploiting patch-able vulnerabilities. AD attacks focuses on abusing features, trusts, components etc.
 
 
 
@@ -16,20 +16,53 @@ This section focuses on PHYSICAL active directory attacking. These machines can 
 
 ## Physical Active Directory at a high level
 
-### &#x20;Domain Controllers
+### Domain Controllers
 
 A server with the Active Directory DS server role installed that has been specifically promoted to a domain controller.
 
-All Domain controllres
+All Domain controllers
 
 * Host a copy of the AD DS directory store
   * The AD Directory Data store contains a file known as "Ntds.dit"
-  * This is stored by default in the %SystemRoot%NTDS folder on all domain controllres
+  * This is stored by default in the %SystemRoot%NTDS folder on all domain controllers
   * This stores user data, password hash's and directory information
   * It is only accessible through the domain controller processes and protocols
-* Provide authenticaiton and authorization services
+* Provide authentication and authorization services
 * Replicate updates to other domain controllers in the domain and forest
 * Allow administrative access to manage user accounts and network resources
+
+
+
+## Active Directory - Objects
+
+The core of any Windows Domain is the Active Directory Domain Service (AD DS). This is the catalogue that holds all information about the other objects in the network. Object types include
+
+* Users - The most common group in AD. Users are one of the objects known as security principals aka that they are authenticated by the domain and can be assigned privileges. User's can further be subdivided into 2 categories
+  * People - Employees, organizational staff that needs access to the network
+  * Services - Defined to be used by services like IIS or MSSQL. Every service requires a user to run, but service user's are different as in they will only have privs needed for that specific service.
+* Machines - For every computer that joins an AD domain a machine object will be created. Machines are also considered "security principals" and are assigned an account just as any regular user. This account has somewhat limited rights within the domain itself. The machine accounts themselves are local admins on the assigned computer and are not generally supposed to be accessed beyond the computer itself. This being said, a password is password.
+  * The stipulation is machine accounts are automatically rotated out and are comprised of 120 random characters.
+  * The machine account name is the computers name followed by a dollar sign aka DC01 = $DCO1
+* Security Groups - These allow you to define user groups to access rights to files or other resources. Any users added to an existing group will automatically inherit all of the group's privileges. With this, security groups are also considered security principals and can have privileges over resources on the network.
+  * These groups can have both users and machines as members.
+    * Domain Admins - Users of this group have admin privs over the entire domain. By default they can administer any computer on the domain including DC's.
+    * Server operators - Can admin Domain controllers but cannot change any administrative group membership
+    * Backup Operators - Users in this group can access any file and are able to perform backups of data on computers
+    * Account Operators - Can create/Modify other accounts in the domain
+    * Domain Users - All existing user accounts
+    * Domain Computers - All existing computers
+    * Domain Controllers - All existing DCs
+
+## Organizational Units vs Security Groups
+
+* OUs are useful for applying policies to users and computers, which include specific configurations that pertain to sets of users depending on their particular role in the enterprise. User's can only be a member of a single OU at a time
+  * There are a handful of default OU's setup by windows
+    * Builtin: Default groups available to any Windows host
+    * Computers: Any machine joining is put there by default
+    * Domain Controllers: OU for DC's
+    * Users: Default users and groups that apply to a domain-wide context
+    * Managed Service Accounts: Holds all service accounts
+* Security groups instead are used to grant permissions over resources. You will use groups if you want to allow some users to access a shared folder or a network printer. A user can be part of many groups which is needed to grant access to multiple resources.
 
 
 
