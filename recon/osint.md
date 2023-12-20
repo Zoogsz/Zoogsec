@@ -204,3 +204,51 @@ Phone number OSINT is honestly a PITA. I am actively looking for suggestions for
 
 
 
+## Credential Hunting
+
+Such an important part of proper OSINT is hunting for leaked credentials. The "industry standard" tool for this right now is dehashed. This is a paid subscription, and the API credits (a need) are a couple extra bucks on top of the monthly subscription.&#x20;
+
+{% embed url="https://github.com/hmaverickadams/DeHashed-API-Tool" %}
+Super useful tool from the TCMsec guys for pulling from dehashed API.
+{% endembed %}
+
+```
+usage: dehashed_parser.py [-h] [-a ADDRESS] [-e EMAIL] [-H HASHED_PASSWORD] [-i IP_ADDRESS] [-n NAME] [-p PASSWORD]
+                 [-P PHONE_NUMBER] [-u USERNAME] [-v VIN] [-o OUTPUT] [-oS OUTPUT_SILENTLY] [-s SIZE]
+                 [--only-passwords]
+
+Query the DeHashed API
+
+options:
+  -h, --help            show this help message and exit
+  -a ADDRESS, --address ADDRESS
+                        Specify the address
+  -e EMAIL, --email EMAIL
+                        Specify the email
+  -H HASHED_PASSWORD, --hashed_password HASHED_PASSWORD
+                        Specify the hashed password
+  -i IP_ADDRESS, --ip_address IP_ADDRESS
+                        Specify the IP address
+  -n NAME, --name NAME  Specify the name
+  -p PASSWORD, --password PASSWORD
+                        Specify the password
+  -P PHONE_NUMBER, --phone_number PHONE_NUMBER
+                        Specify the phone number
+  -u USERNAME, --username USERNAME
+                        Specify the username
+  -v VIN, --vin VIN     Specify the VIN
+  -o OUTPUT, --output OUTPUT
+                        Outputs to CSV. A file name is required.
+  -oS OUTPUT_SILENTLY, --output_silently OUTPUT_SILENTLY
+                        Outputs to CSV silently. A file name is required.
+  -s SIZE, --size SIZE  Specify the size, between 1 and 10000
+  --only-passwords      Return only passwords
+```
+
+Outside of this, the most commonly used tool for your own "ethically sourced" databases is most likely breach parse. Its a super simple bash tool that is built for the old megabreach and COMB leaks.
+
+{% embed url="https://github.com/hmaverickadams/breach-parse" %}
+
+There are also some "specialty" parsers out there for some other breaches. I am not going to provide the magnet link too them however the hint I will give is "AntiPublic" and "Collection 1-5". Consider this a little OSINT practice and go figure that out.
+
+{% embed url="https://github.com/philipperemy/3.7-billion-passwords-tools" %}
