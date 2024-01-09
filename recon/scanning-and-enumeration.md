@@ -152,7 +152,7 @@ To run:
 nmap -Pn -vvv -p $PORTS -A -sC 127.0.0
 ```
 
-## #Exploit Research
+## Exploit Research
 
 My go to search for quick wins is searching the reported technology using searchsploit.
 
