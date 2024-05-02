@@ -6,7 +6,7 @@ description: >-
 
 # Labs
 
-<pre data-overflow="wrap" data-full-width="true"><code>Level 1: was just checking for a standard bash shell so dropped it in the VDI instead
+<pre data-overflow="wrap" data-full-width="false"><code>Level 1: was just checking for a standard bash shell so dropped it in the VDI instead
 
 pwn.college{QwOjdbdP8ERN3bFd62AxsTsMF0I.dFDL3QzMzUzW}
 
